@@ -1,0 +1,47 @@
+div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,table,form,nav,center,{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+	display: block;
+}
+body, html {
+	background:  #68efe5 ;
+    padding: 5px 65px 10px 65px;
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+}
+ul {
+	list-style: none;
+}
+blockquote,q{
+	quotes: none;
+}
+blockquote:before,blockquote:after,
+q:before, q:after{
+	content: ''
+	content:none;
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* { box-sizing: border-box; }
+/*---------1.navs-------*/
+.navbar { background: #ca69e8 ; margin-bottom: 30px}
+	.navbar ul {display: flex; justify-content: space-between; height: 60px;}
+		.navbar li {position: relative; flex: 1; display: flex; justify-content: center; align-items: center;border-right: 1px solid #fff;}
+			.navbar a {position: relative;display: block;color: #fff;text-decoration: none;text-align: center;font-size: 15px;}
+			.navbar li.active:after { content: ""; position: absolute;bottom: 0;left: 10%;height: 3px;width: 70%;background: #02648e; }
+			.navbar li:hover .subnavbar {display:block;}
+		.subnavbar{display: none; position: absolute; left: 0; top:  61px; width: 100%;background: #02648e;}
+			.subnavar a {display: flex;justify-content: flex-end;align-items: center;height: 40px;padding-right: 10px; border-bottom: 1px solid #fff; font-size: 16px;}
+			.subnavbar .active:after {content: "";position: absolute;bottom: 0; right: 0;height: 100%; width: 3px; background: #009cde;}
+			

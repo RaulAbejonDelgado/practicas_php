@@ -1,0 +1,42 @@
+sentencias mysql desde terminal 
+#conexion a la base de datos mysql
+sudo mysql -u root -p 
+#crear base de datos nueva
+create database practicas_php;
+#crear tablas en base de datos con un campo int
+create table practica(id_practica int);
+#meter valores a los campos de la tabla
+insert into table practica(id_practica) values(1); 
+insert into practica (name,id_practica,notice) values ("drohne",1,"Esto es una jodida prueba xD");
+#agregar campos nuevos a una tabala ya existente
+alter table `tabla_de_prueba` add `nuevo_campo_indice` int(11) unsigned not null, add index(`nuevo_campo_indice`);
+#ver base de datos
+show databases;
+#usar una base de datos en concreto
+use NombreBaseDatos;
+#listas tablas de la base de datos
+show tables;
+#ver campos de las tablas
+select * from nombre_de_tabla;
+#crear un campo primary key
+create table prueba(id int(11), primary key (id));
+#añadir un campo a una tabla existente
+alter table prueba add (name varchar(24));
+#ver usuarios de una base de datos 
+select User from mysql.user;
+#ver los usuarios relacion con sus base de datos
+select u.User,Db from mysql.user u,mysql.db d where u.User=d.User;
+#crear usuario mysql
+CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'tu_contrasena';
+#otorgar privilegios a un usuario
+GRANT ALL PRIVILEGES ON * . * TO 'drohne'@'localhost';
+#actualizar privilegios
+FLUSH PRIVILEGES;
+#ver control de contraseña
+SHOW VARIABLES LIKE 'validate_password%';
+#cambiar la longitud de la contrase a 4 caracteres
+SET GLOBAL validate_password_length=4;
+#bajar el nivel de seguridad de la contraseña
+SET GLOBAL validate_password_policy= LOW;
+/*para futuras pruebas en php y mysql*/
+usuario user contraseña pass
